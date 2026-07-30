@@ -10,33 +10,219 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as NotificationsRouteImport } from './routes/notifications'
+import { Route as OnboardingRouteImport } from './routes/onboarding'
+import { Route as PendingRouteImport } from './routes/pending'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as ReviewSubmittedRouteImport } from './routes/review-submitted'
+import { Route as RoleRouteImport } from './routes/role'
+import { Route as SearchRouteImport } from './routes/search'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as VerificationRouteImport } from './routes/verification'
+import { Route as ReviewIdRouteImport } from './routes/review.$id'
+import { Route as SupervisorIdRouteImport } from './routes/supervisor.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotificationsRoute = NotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnboardingRoute = OnboardingRouteImport.update({
+  id: '/onboarding',
+  path: '/onboarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PendingRoute = PendingRouteImport.update({
+  id: '/pending',
+  path: '/pending',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReviewSubmittedRoute = ReviewSubmittedRouteImport.update({
+  id: '/review-submitted',
+  path: '/review-submitted',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RoleRoute = RoleRouteImport.update({
+  id: '/role',
+  path: '/role',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SearchRoute = SearchRouteImport.update({
+  id: '/search',
+  path: '/search',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VerificationRoute = VerificationRouteImport.update({
+  id: '/verification',
+  path: '/verification',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReviewIdRoute = ReviewIdRouteImport.update({
+  id: '/review/$id',
+  path: '/review/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SupervisorIdRoute = SupervisorIdRouteImport.update({
+  id: '/supervisor/$id',
+  path: '/supervisor/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
+  '/dashboard': typeof DashboardRoute
+  '/notifications': typeof NotificationsRoute
+  '/onboarding': typeof OnboardingRoute
+  '/pending': typeof PendingRoute
+  '/profile': typeof ProfileRoute
+  '/review-submitted': typeof ReviewSubmittedRoute
+  '/role': typeof RoleRoute
+  '/search': typeof SearchRoute
+  '/settings': typeof SettingsRoute
+  '/terms': typeof TermsRoute
+  '/verification': typeof VerificationRoute
+  '/review/$id': typeof ReviewIdRoute
+  '/supervisor/$id': typeof SupervisorIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
+  '/dashboard': typeof DashboardRoute
+  '/notifications': typeof NotificationsRoute
+  '/onboarding': typeof OnboardingRoute
+  '/pending': typeof PendingRoute
+  '/profile': typeof ProfileRoute
+  '/review-submitted': typeof ReviewSubmittedRoute
+  '/role': typeof RoleRoute
+  '/search': typeof SearchRoute
+  '/settings': typeof SettingsRoute
+  '/terms': typeof TermsRoute
+  '/verification': typeof VerificationRoute
+  '/review/$id': typeof ReviewIdRoute
+  '/supervisor/$id': typeof SupervisorIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
+  '/dashboard': typeof DashboardRoute
+  '/notifications': typeof NotificationsRoute
+  '/onboarding': typeof OnboardingRoute
+  '/pending': typeof PendingRoute
+  '/profile': typeof ProfileRoute
+  '/review-submitted': typeof ReviewSubmittedRoute
+  '/role': typeof RoleRoute
+  '/search': typeof SearchRoute
+  '/settings': typeof SettingsRoute
+  '/terms': typeof TermsRoute
+  '/verification': typeof VerificationRoute
+  '/review/$id': typeof ReviewIdRoute
+  '/supervisor/$id': typeof SupervisorIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/auth'
+    | '/dashboard'
+    | '/notifications'
+    | '/onboarding'
+    | '/pending'
+    | '/profile'
+    | '/review-submitted'
+    | '/role'
+    | '/search'
+    | '/settings'
+    | '/terms'
+    | '/verification'
+    | '/review/$id'
+    | '/supervisor/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/auth'
+    | '/dashboard'
+    | '/notifications'
+    | '/onboarding'
+    | '/pending'
+    | '/profile'
+    | '/review-submitted'
+    | '/role'
+    | '/search'
+    | '/settings'
+    | '/terms'
+    | '/verification'
+    | '/review/$id'
+    | '/supervisor/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/auth'
+    | '/dashboard'
+    | '/notifications'
+    | '/onboarding'
+    | '/pending'
+    | '/profile'
+    | '/review-submitted'
+    | '/role'
+    | '/search'
+    | '/settings'
+    | '/terms'
+    | '/verification'
+    | '/review/$id'
+    | '/supervisor/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthRoute: typeof AuthRoute
+  DashboardRoute: typeof DashboardRoute
+  NotificationsRoute: typeof NotificationsRoute
+  OnboardingRoute: typeof OnboardingRoute
+  PendingRoute: typeof PendingRoute
+  ProfileRoute: typeof ProfileRoute
+  ReviewSubmittedRoute: typeof ReviewSubmittedRoute
+  RoleRoute: typeof RoleRoute
+  SearchRoute: typeof SearchRoute
+  SettingsRoute: typeof SettingsRoute
+  TermsRoute: typeof TermsRoute
+  VerificationRoute: typeof VerificationRoute
+  ReviewIdRoute: typeof ReviewIdRoute
+  SupervisorIdRoute: typeof SupervisorIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,22 +234,124 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notifications': {
+      id: '/notifications'
+      path: '/notifications'
+      fullPath: '/notifications'
+      preLoaderRoute: typeof NotificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onboarding': {
+      id: '/onboarding'
+      path: '/onboarding'
+      fullPath: '/onboarding'
+      preLoaderRoute: typeof OnboardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pending': {
+      id: '/pending'
+      path: '/pending'
+      fullPath: '/pending'
+      preLoaderRoute: typeof PendingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/review-submitted': {
+      id: '/review-submitted'
+      path: '/review-submitted'
+      fullPath: '/review-submitted'
+      preLoaderRoute: typeof ReviewSubmittedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/role': {
+      id: '/role'
+      path: '/role'
+      fullPath: '/role'
+      preLoaderRoute: typeof RoleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/search': {
+      id: '/search'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof SearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/verification': {
+      id: '/verification'
+      path: '/verification'
+      fullPath: '/verification'
+      preLoaderRoute: typeof VerificationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/review/$id': {
+      id: '/review/$id'
+      path: '/review/$id'
+      fullPath: '/review/$id'
+      preLoaderRoute: typeof ReviewIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/supervisor/$id': {
+      id: '/supervisor/$id'
+      path: '/supervisor/$id'
+      fullPath: '/supervisor/$id'
+      preLoaderRoute: typeof SupervisorIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthRoute: AuthRoute,
+  DashboardRoute: DashboardRoute,
+  NotificationsRoute: NotificationsRoute,
+  OnboardingRoute: OnboardingRoute,
+  PendingRoute: PendingRoute,
+  ProfileRoute: ProfileRoute,
+  ReviewSubmittedRoute: ReviewSubmittedRoute,
+  RoleRoute: RoleRoute,
+  SearchRoute: SearchRoute,
+  SettingsRoute: SettingsRoute,
+  TermsRoute: TermsRoute,
+  VerificationRoute: VerificationRoute,
+  ReviewIdRoute: ReviewIdRoute,
+  SupervisorIdRoute: SupervisorIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
