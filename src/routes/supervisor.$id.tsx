@@ -39,7 +39,7 @@ function SupervisorProfile() {
   const initials = supervisor.name
     .replace(/^Dr\.\s*/, "")
     .split(" ")
-    .map((p) => p[0])
+    .map((p: string) => p[0])
     .join("");
 
   return (

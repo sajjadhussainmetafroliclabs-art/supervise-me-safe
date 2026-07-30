@@ -7,7 +7,7 @@ export function SupervisorCard({ supervisor }: { supervisor: Supervisor }) {
   const initials = supervisor.name
     .replace(/^Dr\.\s*/, "")
     .split(" ")
-    .map((p) => p[0])
+    .map((p: string) => p[0])
     .join("");
 
   return (
