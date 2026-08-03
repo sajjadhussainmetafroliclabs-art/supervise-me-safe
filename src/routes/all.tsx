@@ -53,6 +53,35 @@ const innerScreens: { step: number; label: string; path: string }[] = [
 ];
 
 
+type Screen = { step: number; label: string; path: string };
+
+function Grid({ items }: { items: Screen[] }) {
+  return (
+    <div className="mx-auto mt-8 grid max-w-6xl grid-cols-[repeat(auto-fill,minmax(320px,1fr))] gap-8">
+      {items.map((s) => (
+        <figure key={s.path} className="flex flex-col items-center gap-3">
+          <div className="overflow-hidden rounded-[28px] border border-border bg-card shadow-lift">
+            <iframe
+              src={s.path}
+              title={`${s.label} screen`}
+              loading="lazy"
+              width={320}
+              height={640}
+              className="block h-[640px] w-[320px] border-0"
+            />
+          </div>
+          <figcaption className="text-sm font-medium text-foreground">
+            <span className="mr-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-xs text-primary">
+              {s.step}
+            </span>
+            {s.label}
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  );
+}
+
 function AllScreens() {
   return (
     <div className="min-h-screen gradient-calm px-6 py-12">
@@ -61,32 +90,20 @@ function AllScreens() {
           Supportive Steps — all screens
         </h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          The complete 15-screen flow on a single page.
+          The complete flow plus every inner page on a single page.
         </p>
       </header>
 
-      <div className="mx-auto mt-10 grid max-w-6xl grid-cols-[repeat(auto-fill,minmax(320px,1fr))] gap-8">
-        {screens.map((s) => (
-          <figure key={s.path} className="flex flex-col items-center gap-3">
-            <div className="overflow-hidden rounded-[28px] border border-border bg-card shadow-lift">
-              <iframe
-                src={s.path}
-                title={`${s.label} screen`}
-                loading="lazy"
-                width={320}
-                height={640}
-                className="block h-[640px] w-[320px] border-0"
-              />
-            </div>
-            <figcaption className="text-sm font-medium text-foreground">
-              <span className="mr-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-xs text-primary">
-                {s.step}
-              </span>
-              {s.label}
-            </figcaption>
-          </figure>
-        ))}
-      </div>
+      <h2 className="mx-auto mt-10 max-w-6xl font-heading text-xl font-semibold text-foreground">
+        Main flow
+      </h2>
+      <Grid items={mainScreens} />
+
+      <h2 className="mx-auto mt-14 max-w-6xl font-heading text-xl font-semibold text-foreground">
+        Inner pages
+      </h2>
+      <Grid items={innerScreens} />
     </div>
   );
 }
+
