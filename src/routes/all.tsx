@@ -19,7 +19,9 @@ export const Route = createFileRoute("/all")({
   component: AllScreens,
 });
 
-const screens: { step: number; label: string; path: string }[] = [
+import { supervisors } from "@/lib/data";
+
+const mainScreens: { step: number; label: string; path: string }[] = [
   { step: 1, label: "Splash", path: "/" },
   { step: 2, label: "Onboarding", path: "/onboarding" },
   { step: 3, label: "Sign Up / Login", path: "/auth" },
@@ -29,13 +31,27 @@ const screens: { step: number; label: string; path: string }[] = [
   { step: 7, label: "Pending Approval", path: "/pending" },
   { step: 8, label: "Dashboard", path: "/dashboard" },
   { step: 9, label: "Search Supervisors", path: "/search" },
-  { step: 10, label: "Supervisor Profile", path: "/supervisor/1" },
-  { step: 11, label: "Write Review", path: "/review/1" },
+  { step: 10, label: "Supervisor Profile", path: `/supervisor/${supervisors[0].id}` },
+  { step: 11, label: "Write Review", path: `/review/${supervisors[0].id}` },
   { step: 12, label: "Review Submitted", path: "/review-submitted" },
   { step: 13, label: "Notifications", path: "/notifications" },
   { step: 14, label: "My Profile", path: "/profile" },
   { step: 15, label: "Settings", path: "/settings" },
 ];
+
+const innerScreens: { step: number; label: string; path: string }[] = [
+  ...supervisors.map((s, i) => ({
+    step: i + 1,
+    label: `Profile — ${s.name}`,
+    path: `/supervisor/${s.id}`,
+  })),
+  ...supervisors.map((s, i) => ({
+    step: supervisors.length + i + 1,
+    label: `Review — ${s.name}`,
+    path: `/review/${s.id}`,
+  })),
+];
+
 
 function AllScreens() {
   return (
