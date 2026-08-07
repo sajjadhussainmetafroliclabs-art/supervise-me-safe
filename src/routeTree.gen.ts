@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AllRouteImport } from './routes/all'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as EditProfileRouteImport } from './routes/edit-profile'
 import { Route as NotificationsRouteImport } from './routes/notifications'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as PendingRouteImport } from './routes/pending'
@@ -44,6 +45,11 @@ const AuthRoute = AuthRouteImport.update({
 const DashboardRoute = DashboardRouteImport.update({
   id: '/dashboard',
   path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EditProfileRoute = EditProfileRouteImport.update({
+  id: '/edit-profile',
+  path: '/edit-profile',
   getParentRoute: () => rootRouteImport,
 } as any)
 const NotificationsRoute = NotificationsRouteImport.update({
@@ -112,6 +118,7 @@ export interface FileRoutesByFullPath {
   '/all': typeof AllRoute
   '/auth': typeof AuthRoute
   '/dashboard': typeof DashboardRoute
+  '/edit-profile': typeof EditProfileRoute
   '/notifications': typeof NotificationsRoute
   '/onboarding': typeof OnboardingRoute
   '/pending': typeof PendingRoute
@@ -130,6 +137,7 @@ export interface FileRoutesByTo {
   '/all': typeof AllRoute
   '/auth': typeof AuthRoute
   '/dashboard': typeof DashboardRoute
+  '/edit-profile': typeof EditProfileRoute
   '/notifications': typeof NotificationsRoute
   '/onboarding': typeof OnboardingRoute
   '/pending': typeof PendingRoute
@@ -149,6 +157,7 @@ export interface FileRoutesById {
   '/all': typeof AllRoute
   '/auth': typeof AuthRoute
   '/dashboard': typeof DashboardRoute
+  '/edit-profile': typeof EditProfileRoute
   '/notifications': typeof NotificationsRoute
   '/onboarding': typeof OnboardingRoute
   '/pending': typeof PendingRoute
@@ -169,6 +178,7 @@ export interface FileRouteTypes {
     | '/all'
     | '/auth'
     | '/dashboard'
+    | '/edit-profile'
     | '/notifications'
     | '/onboarding'
     | '/pending'
@@ -187,6 +197,7 @@ export interface FileRouteTypes {
     | '/all'
     | '/auth'
     | '/dashboard'
+    | '/edit-profile'
     | '/notifications'
     | '/onboarding'
     | '/pending'
@@ -205,6 +216,7 @@ export interface FileRouteTypes {
     | '/all'
     | '/auth'
     | '/dashboard'
+    | '/edit-profile'
     | '/notifications'
     | '/onboarding'
     | '/pending'
@@ -224,6 +236,7 @@ export interface RootRouteChildren {
   AllRoute: typeof AllRoute
   AuthRoute: typeof AuthRoute
   DashboardRoute: typeof DashboardRoute
+  EditProfileRoute: typeof EditProfileRoute
   NotificationsRoute: typeof NotificationsRoute
   OnboardingRoute: typeof OnboardingRoute
   PendingRoute: typeof PendingRoute
@@ -266,6 +279,13 @@ declare module '@tanstack/react-router' {
       path: '/dashboard'
       fullPath: '/dashboard'
       preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/edit-profile': {
+      id: '/edit-profile'
+      path: '/edit-profile'
+      fullPath: '/edit-profile'
+      preLoaderRoute: typeof EditProfileRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/notifications': {
@@ -360,6 +380,7 @@ const rootRouteChildren: RootRouteChildren = {
   AllRoute: AllRoute,
   AuthRoute: AuthRoute,
   DashboardRoute: DashboardRoute,
+  EditProfileRoute: EditProfileRoute,
   NotificationsRoute: NotificationsRoute,
   OnboardingRoute: OnboardingRoute,
   PendingRoute: PendingRoute,

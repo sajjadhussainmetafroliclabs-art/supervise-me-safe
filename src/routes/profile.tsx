@@ -28,7 +28,18 @@ export const Route = createFileRoute("/profile")({
 function Profile() {
   return (
     <PhoneFrame>
-      <ScreenHeader title="My profile" />
+      <ScreenHeader
+        title="My profile"
+        action={
+          <Link
+            to="/edit-profile"
+            aria-label="Edit profile"
+            className="mt-1 inline-flex size-9 shrink-0 items-center justify-center rounded-full bg-secondary text-primary transition-colors hover:bg-accent"
+          >
+            <PenLine className="size-4" />
+          </Link>
+        }
+      />
 
       <section className="rounded-2xl bg-card p-5 text-center shadow-soft">
         <span className="mx-auto flex size-20 items-center justify-center rounded-3xl bg-secondary font-display text-xl font-semibold text-primary">

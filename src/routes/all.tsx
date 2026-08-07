@@ -40,6 +40,7 @@ const mainScreens: { step: number; label: string; path: string }[] = [
 ];
 
 const innerScreens: { step: number; label: string; path: string }[] = [
+  { step: 0, label: "Edit Profile", path: "/edit-profile" },
   ...supervisors.map((s, i) => ({
     step: i + 1,
     label: `Profile — ${s.name}`,
