@@ -88,9 +88,13 @@ function Auth() {
           </Button>
         </form>
 
-        <button className="mt-4 w-full text-center text-sm font-medium text-muted-foreground">
+        <Link
+          to="/forgot-password"
+          className="mt-4 block w-full text-center text-sm font-medium text-muted-foreground"
+        >
           Forgot password?
-        </button>
+        </Link>
+
       </div>
 
       <p className="mt-8 text-center text-xs leading-relaxed text-muted-foreground">
