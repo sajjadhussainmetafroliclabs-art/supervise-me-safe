@@ -53,7 +53,7 @@ function Settings() {
       </Group>
 
       <Group title="Account">
-        <LinkRow icon={KeyRound} label="Change password" />
+        <LinkRow icon={KeyRound} label="Change password" to="/change-password" />
         <LinkRow icon={Bell} label="Notification preferences" />
         <LinkRow icon={HelpCircle} label="Help center" />
       </Group>
@@ -118,14 +118,35 @@ function ToggleRow({
   );
 }
 
-function LinkRow({ icon: Icon, label }: { icon: React.ElementType; label: string }) {
-  return (
-    <button className="flex w-full items-center gap-3 p-4 text-left">
+function LinkRow({
+  icon: Icon,
+  label,
+  to,
+}: {
+  icon: React.ElementType;
+  label: string;
+  to?: string;
+}) {
+  const inner = (
+    <>
       <span className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-secondary">
         <Icon className="size-4 text-primary" strokeWidth={1.8} />
       </span>
       <span className="flex-1 text-sm font-medium">{label}</span>
       <ChevronRight className="size-4 text-muted-foreground" />
-    </button>
+    </>
+  );
+
+  if (to) {
+    return (
+      <Link to={to} className="flex w-full items-center gap-3 p-4 text-left">
+        {inner}
+      </Link>
+    );
+  }
+
+  return (
+    <button className="flex w-full items-center gap-3 p-4 text-left">{inner}</button>
   );
 }
+
