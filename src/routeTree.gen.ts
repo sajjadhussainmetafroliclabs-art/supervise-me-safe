@@ -12,18 +12,23 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AllRouteImport } from './routes/all'
 import { Route as AuthRouteImport } from './routes/auth'
+import { Route as ChangePasswordRouteImport } from './routes/change-password'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as EditProfileRouteImport } from './routes/edit-profile'
+import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
 import { Route as NotificationsRouteImport } from './routes/notifications'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
+import { Route as PasswordUpdatedRouteImport } from './routes/password-updated'
 import { Route as PendingRouteImport } from './routes/pending'
 import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as ReviewSubmittedRouteImport } from './routes/review-submitted'
 import { Route as RoleRouteImport } from './routes/role'
 import { Route as SearchRouteImport } from './routes/search'
 import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as VerificationRouteImport } from './routes/verification'
+import { Route as VerifyCodeRouteImport } from './routes/verify-code'
 import { Route as ReviewIdRouteImport } from './routes/review.$id'
 import { Route as SupervisorIdRouteImport } from './routes/supervisor.$id'
 
@@ -42,6 +47,11 @@ const AuthRoute = AuthRouteImport.update({
   path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ChangePasswordRoute = ChangePasswordRouteImport.update({
+  id: '/change-password',
+  path: '/change-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DashboardRoute = DashboardRouteImport.update({
   id: '/dashboard',
   path: '/dashboard',
@@ -50,6 +60,11 @@ const DashboardRoute = DashboardRouteImport.update({
 const EditProfileRoute = EditProfileRouteImport.update({
   id: '/edit-profile',
   path: '/edit-profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForgotPasswordRoute = ForgotPasswordRouteImport.update({
+  id: '/forgot-password',
+  path: '/forgot-password',
   getParentRoute: () => rootRouteImport,
 } as any)
 const NotificationsRoute = NotificationsRouteImport.update({
@@ -62,6 +77,11 @@ const OnboardingRoute = OnboardingRouteImport.update({
   path: '/onboarding',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PasswordUpdatedRoute = PasswordUpdatedRouteImport.update({
+  id: '/password-updated',
+  path: '/password-updated',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PendingRoute = PendingRouteImport.update({
   id: '/pending',
   path: '/pending',
@@ -70,6 +90,11 @@ const PendingRoute = PendingRouteImport.update({
 const ProfileRoute = ProfileRouteImport.update({
   id: '/profile',
   path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResetPasswordRoute = ResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ReviewSubmittedRoute = ReviewSubmittedRouteImport.update({
@@ -102,6 +127,11 @@ const VerificationRoute = VerificationRouteImport.update({
   path: '/verification',
   getParentRoute: () => rootRouteImport,
 } as any)
+const VerifyCodeRoute = VerifyCodeRouteImport.update({
+  id: '/verify-code',
+  path: '/verify-code',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ReviewIdRoute = ReviewIdRouteImport.update({
   id: '/review/$id',
   path: '/review/$id',
@@ -117,18 +147,23 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/all': typeof AllRoute
   '/auth': typeof AuthRoute
+  '/change-password': typeof ChangePasswordRoute
   '/dashboard': typeof DashboardRoute
   '/edit-profile': typeof EditProfileRoute
+  '/forgot-password': typeof ForgotPasswordRoute
   '/notifications': typeof NotificationsRoute
   '/onboarding': typeof OnboardingRoute
+  '/password-updated': typeof PasswordUpdatedRoute
   '/pending': typeof PendingRoute
   '/profile': typeof ProfileRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/review-submitted': typeof ReviewSubmittedRoute
   '/role': typeof RoleRoute
   '/search': typeof SearchRoute
   '/settings': typeof SettingsRoute
   '/terms': typeof TermsRoute
   '/verification': typeof VerificationRoute
+  '/verify-code': typeof VerifyCodeRoute
   '/review/$id': typeof ReviewIdRoute
   '/supervisor/$id': typeof SupervisorIdRoute
 }
@@ -136,18 +171,23 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/all': typeof AllRoute
   '/auth': typeof AuthRoute
+  '/change-password': typeof ChangePasswordRoute
   '/dashboard': typeof DashboardRoute
   '/edit-profile': typeof EditProfileRoute
+  '/forgot-password': typeof ForgotPasswordRoute
   '/notifications': typeof NotificationsRoute
   '/onboarding': typeof OnboardingRoute
+  '/password-updated': typeof PasswordUpdatedRoute
   '/pending': typeof PendingRoute
   '/profile': typeof ProfileRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/review-submitted': typeof ReviewSubmittedRoute
   '/role': typeof RoleRoute
   '/search': typeof SearchRoute
   '/settings': typeof SettingsRoute
   '/terms': typeof TermsRoute
   '/verification': typeof VerificationRoute
+  '/verify-code': typeof VerifyCodeRoute
   '/review/$id': typeof ReviewIdRoute
   '/supervisor/$id': typeof SupervisorIdRoute
 }
@@ -156,18 +196,23 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/all': typeof AllRoute
   '/auth': typeof AuthRoute
+  '/change-password': typeof ChangePasswordRoute
   '/dashboard': typeof DashboardRoute
   '/edit-profile': typeof EditProfileRoute
+  '/forgot-password': typeof ForgotPasswordRoute
   '/notifications': typeof NotificationsRoute
   '/onboarding': typeof OnboardingRoute
+  '/password-updated': typeof PasswordUpdatedRoute
   '/pending': typeof PendingRoute
   '/profile': typeof ProfileRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/review-submitted': typeof ReviewSubmittedRoute
   '/role': typeof RoleRoute
   '/search': typeof SearchRoute
   '/settings': typeof SettingsRoute
   '/terms': typeof TermsRoute
   '/verification': typeof VerificationRoute
+  '/verify-code': typeof VerifyCodeRoute
   '/review/$id': typeof ReviewIdRoute
   '/supervisor/$id': typeof SupervisorIdRoute
 }
@@ -177,18 +222,23 @@ export interface FileRouteTypes {
     | '/'
     | '/all'
     | '/auth'
+    | '/change-password'
     | '/dashboard'
     | '/edit-profile'
+    | '/forgot-password'
     | '/notifications'
     | '/onboarding'
+    | '/password-updated'
     | '/pending'
     | '/profile'
+    | '/reset-password'
     | '/review-submitted'
     | '/role'
     | '/search'
     | '/settings'
     | '/terms'
     | '/verification'
+    | '/verify-code'
     | '/review/$id'
     | '/supervisor/$id'
   fileRoutesByTo: FileRoutesByTo
@@ -196,18 +246,23 @@ export interface FileRouteTypes {
     | '/'
     | '/all'
     | '/auth'
+    | '/change-password'
     | '/dashboard'
     | '/edit-profile'
+    | '/forgot-password'
     | '/notifications'
     | '/onboarding'
+    | '/password-updated'
     | '/pending'
     | '/profile'
+    | '/reset-password'
     | '/review-submitted'
     | '/role'
     | '/search'
     | '/settings'
     | '/terms'
     | '/verification'
+    | '/verify-code'
     | '/review/$id'
     | '/supervisor/$id'
   id:
@@ -215,18 +270,23 @@ export interface FileRouteTypes {
     | '/'
     | '/all'
     | '/auth'
+    | '/change-password'
     | '/dashboard'
     | '/edit-profile'
+    | '/forgot-password'
     | '/notifications'
     | '/onboarding'
+    | '/password-updated'
     | '/pending'
     | '/profile'
+    | '/reset-password'
     | '/review-submitted'
     | '/role'
     | '/search'
     | '/settings'
     | '/terms'
     | '/verification'
+    | '/verify-code'
     | '/review/$id'
     | '/supervisor/$id'
   fileRoutesById: FileRoutesById
@@ -235,18 +295,23 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AllRoute: typeof AllRoute
   AuthRoute: typeof AuthRoute
+  ChangePasswordRoute: typeof ChangePasswordRoute
   DashboardRoute: typeof DashboardRoute
   EditProfileRoute: typeof EditProfileRoute
+  ForgotPasswordRoute: typeof ForgotPasswordRoute
   NotificationsRoute: typeof NotificationsRoute
   OnboardingRoute: typeof OnboardingRoute
+  PasswordUpdatedRoute: typeof PasswordUpdatedRoute
   PendingRoute: typeof PendingRoute
   ProfileRoute: typeof ProfileRoute
+  ResetPasswordRoute: typeof ResetPasswordRoute
   ReviewSubmittedRoute: typeof ReviewSubmittedRoute
   RoleRoute: typeof RoleRoute
   SearchRoute: typeof SearchRoute
   SettingsRoute: typeof SettingsRoute
   TermsRoute: typeof TermsRoute
   VerificationRoute: typeof VerificationRoute
+  VerifyCodeRoute: typeof VerifyCodeRoute
   ReviewIdRoute: typeof ReviewIdRoute
   SupervisorIdRoute: typeof SupervisorIdRoute
 }
@@ -274,6 +339,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/change-password': {
+      id: '/change-password'
+      path: '/change-password'
+      fullPath: '/change-password'
+      preLoaderRoute: typeof ChangePasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/dashboard': {
       id: '/dashboard'
       path: '/dashboard'
@@ -286,6 +358,13 @@ declare module '@tanstack/react-router' {
       path: '/edit-profile'
       fullPath: '/edit-profile'
       preLoaderRoute: typeof EditProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/forgot-password': {
+      id: '/forgot-password'
+      path: '/forgot-password'
+      fullPath: '/forgot-password'
+      preLoaderRoute: typeof ForgotPasswordRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/notifications': {
@@ -302,6 +381,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OnboardingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/password-updated': {
+      id: '/password-updated'
+      path: '/password-updated'
+      fullPath: '/password-updated'
+      preLoaderRoute: typeof PasswordUpdatedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/pending': {
       id: '/pending'
       path: '/pending'
@@ -314,6 +400,13 @@ declare module '@tanstack/react-router' {
       path: '/profile'
       fullPath: '/profile'
       preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reset-password': {
+      id: '/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof ResetPasswordRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/review-submitted': {
@@ -358,6 +451,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof VerificationRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/verify-code': {
+      id: '/verify-code'
+      path: '/verify-code'
+      fullPath: '/verify-code'
+      preLoaderRoute: typeof VerifyCodeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/review/$id': {
       id: '/review/$id'
       path: '/review/$id'
@@ -379,18 +479,23 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AllRoute: AllRoute,
   AuthRoute: AuthRoute,
+  ChangePasswordRoute: ChangePasswordRoute,
   DashboardRoute: DashboardRoute,
   EditProfileRoute: EditProfileRoute,
+  ForgotPasswordRoute: ForgotPasswordRoute,
   NotificationsRoute: NotificationsRoute,
   OnboardingRoute: OnboardingRoute,
+  PasswordUpdatedRoute: PasswordUpdatedRoute,
   PendingRoute: PendingRoute,
   ProfileRoute: ProfileRoute,
+  ResetPasswordRoute: ResetPasswordRoute,
   ReviewSubmittedRoute: ReviewSubmittedRoute,
   RoleRoute: RoleRoute,
   SearchRoute: SearchRoute,
   SettingsRoute: SettingsRoute,
   TermsRoute: TermsRoute,
   VerificationRoute: VerificationRoute,
+  VerifyCodeRoute: VerifyCodeRoute,
   ReviewIdRoute: ReviewIdRoute,
   SupervisorIdRoute: SupervisorIdRoute,
 }

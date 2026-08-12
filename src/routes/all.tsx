@@ -41,6 +41,12 @@ const mainScreens: { step: number; label: string; path: string }[] = [
 
 const innerScreens: { step: number; label: string; path: string }[] = [
   { step: 0, label: "Edit Profile", path: "/edit-profile" },
+  { step: 0, label: "Forgot Password", path: "/forgot-password" },
+  { step: 0, label: "Verify Code", path: "/verify-code" },
+  { step: 0, label: "New Password", path: "/reset-password" },
+  { step: 0, label: "Password Updated", path: "/password-updated" },
+  { step: 0, label: "Change Password", path: "/change-password" },
+
   ...supervisors.map((s, i) => ({
     step: i + 1,
     label: `Profile — ${s.name}`,

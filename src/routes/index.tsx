@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Logo } from "@/components/Logo";
+import { Logo, LogoLockup } from "@/components/Logo";
 import { PhoneFrame } from "@/components/PhoneFrame";
 
 export const Route = createFileRoute("/")({
@@ -31,26 +31,28 @@ function Splash() {
   }, []);
 
   return (
-    <PhoneFrame className="items-center justify-center gradient-sage text-center">
-      <div className="animate-fade-rise flex flex-col items-center">
-        <Logo className="size-28 animate-soft-pulse" />
-        <h1 className="mt-8 text-3xl text-primary-foreground">Supportive Steps</h1>
-        <p className="mt-3 max-w-[16rem] text-sm leading-relaxed text-primary-foreground/80">
-          Empowering Future Counselors Through Trusted Support
-        </p>
+    <PhoneFrame className="items-center justify-center overflow-hidden bg-[#FBF6EF] text-center">
+      {/* Oversized watermark of the mark, echoing the brand splash artwork */}
+      <Logo
+        aria-hidden
+        className="pointer-events-none absolute -bottom-16 left-1/2 size-[26rem] -translate-x-1/2 opacity-[0.07]"
+      />
+
+      <div className="animate-fade-rise relative flex flex-col items-center">
+        <LogoLockup className="w-[17rem]" />
       </div>
 
       <div className="absolute inset-x-6 bottom-12">
         {ready ? (
           <Link
             to="/onboarding"
-            className="animate-fade-rise flex h-13 w-full items-center justify-center rounded-xl bg-card py-4 font-display text-sm font-semibold text-primary shadow-soft"
+            className="animate-fade-rise flex h-13 w-full items-center justify-center rounded-xl bg-primary py-4 font-display text-sm font-semibold text-primary-foreground shadow-soft"
           >
             Continue
           </Link>
         ) : (
-          <div className="mx-auto h-1.5 w-24 overflow-hidden rounded-full bg-primary-foreground/25">
-            <div className="h-full w-1/2 animate-soft-pulse rounded-full bg-primary-foreground/70" />
+          <div className="mx-auto h-1.5 w-24 overflow-hidden rounded-full bg-primary/20">
+            <div className="h-full w-1/2 animate-soft-pulse rounded-full bg-primary/70" />
           </div>
         )}
       </div>
